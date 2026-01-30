@@ -1,18 +1,29 @@
 {{ define "main" }}
-<section class="home-intro">
+<section class="home-hero">
   {{ .Content }}
 </section>
 
-<section class="combined-feed">
-  {{ $posts := where .Site.RegularPages "Section" "in" (slice "posts" "micro") }}
-  {{ range $posts.ByDate.Reverse }}
-    {{ if eq .Section "posts" }}
-      {{ partial "post-card.html" . }}
-    {{ else if eq .Section "micro" }}
-      {{ partial "micro-card.html" . }}
-    {{ end }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $sorted := $posts.ByDate.Reverse }}
+
+{{ with first 1 $sorted }}
+  {{ range . }}
+  <section class="hero-post">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <time>{{ .Date.Format "2 Jan 2006" }}</time>
+    <p class="summary">{{ .Summary }}</p>
+    <p class="read-more"><a href="{{ .RelPermalink }}">Read &rarr;</a></p>
+  </section>
   {{ end }}
+{{ end }}
+
+<section class="recent-posts">
+  <h2>Recent Posts</h2>
+  {{ range first 5 (after 1 $sorted) }}
+    {{ partial "post-card.html" . }}
+  {{ end }}
+  <p class="column-more"><a href="{{ "posts/" | relURL }}">View all posts &rarr;</a></p>
 </section>
 
-{{ partial "pagination.html" . }}
+{{ partial "newsletter.html" . }}
 {{ end }}

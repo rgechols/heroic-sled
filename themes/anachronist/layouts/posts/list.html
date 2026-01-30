@@ -1,9 +1,10 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
+<p class="feed-link"><a href="{{ "posts/index.xml" | relURL }}">RSS/Atom Feed &rarr;</a></p>
 {{ .Content }}
-{{ partial "newsletter.html" . }}
 {{ range .Pages }}
   {{ partial "post-card.html" . }}
 {{ end }}
 {{ partial "pagination.html" . }}
+{{ partial "newsletter.html" . }}
 {{ end }}

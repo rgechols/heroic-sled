@@ -1,4 +1,10 @@
 <header class="site-header">
   <a href="{{ .Site.Home.RelPermalink }}" class="site-title">{{ .Site.Title }}</a>
-  {{ partial "nav.html" . }}
+  <div class="header-right">
+    {{ partial "nav.html" . }}
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="theme-toggle-light">&#9789;</span>
+      <span class="theme-toggle-dark">&#9788;</span>
+    </button>
+  </div>
 </header>

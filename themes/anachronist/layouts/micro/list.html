@@ -1,10 +1,9 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
-<section class="micro-timeline">
-  {{ range .Pages }}
-    {{ partial "micro-card.html" . }}
-  {{ end }}
-</section>
-{{ partial "pagination.html" . }}
+<div id="microfeed" data-feed-url="{{ .Site.Params.microblogFeedURL }}">
+  <p class="microfeed-loading">Loading&hellip;</p>
+</div>
+<p class="column-more"><a href="https://micro.blog/heroic_sled">Follow on Micro.blog &rarr;</a></p>
+<script src="{{ "js/microfeed.js" | relURL }}"></script>
 {{ end }}

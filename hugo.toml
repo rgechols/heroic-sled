@@ -1,10 +1,13 @@
 baseURL = 'https://example.com/'
 languageCode = 'en-us'
-title = 'The New Anachronist'
+title = 'Heroic Sled'
 theme = 'anachronist'
 [pagination]
   pagerSize = 20
 summaryLength = 40
+
+# Ignore Obsidian config and templates inside content/
+ignoreFiles = ['\.obsidian', '\.templates']
 
 [taxonomies]
   tag = 'tags'
@@ -27,7 +30,7 @@ summaryLength = 40
     isPlainText = true
 
 [outputs]
-  home = ['HTML', 'RSS', 'JSONFeed']
+  home = ['HTML', 'RSS', 'JSONFeed', 'JSON']
   section = ['HTML', 'RSS', 'JSONFeed']
 
 [menus]
@@ -40,7 +43,7 @@ summaryLength = 40
     pageRef = '/posts/'
     weight = 20
   [[menus.main]]
-    name = 'Micro'
+    name = 'Micro.blog'
     pageRef = '/micro/'
     weight = 30
   [[menus.main]]
@@ -54,8 +57,9 @@ summaryLength = 40
 
 [params]
   author = 'Reid Echols'
-  description = 'Essays and short notes from Reid Echols'
+  description = 'Writing by Reid Echols'
   buttondownUsername = 'YOUR_USERNAME'
+  microblogFeedURL = 'https://heroic-sled.micro.blog/feed.json'
   [params.social]
     microblog = ''
     mastodon = ''

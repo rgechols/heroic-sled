@@ -1,5 +1,6 @@
 ---
-title: "The New Anachronist"
+title: "Heroic Sled"
+image: "/images/hero.jpg"
 ---
 
-Welcome. This is a space for essays and short notes — long-form writing alongside quick observations, all in one stream.
+Here are recorded the infrequent, occasional, and entirely human outputs of the brain currently belonging to Reid Echols. 

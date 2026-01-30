@@ -1,3 +1,6 @@
+<script>
+(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if not .IsHome }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
@@ -7,5 +10,6 @@
   {{ $css := . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{ end }}
+<link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} RSS" href="{{ "index.xml" | absURL }}">
 <link rel="alternate" type="application/feed+json" title="{{ .Site.Title }} JSON Feed" href="{{ "feed.json" | absURL }}">
