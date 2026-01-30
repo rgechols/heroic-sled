@@ -4,6 +4,7 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  <div class="grid-bg" id="gridBg"></div>
   {{ partial "header.html" . }}
   <main>
     {{ block "main" . }}{{ end }}
@@ -28,6 +29,10 @@
       }
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      var g = document.getElementById('gridBg');
+      g.style.display = 'none';
+      g.offsetHeight;
+      g.style.display = '';
     });
   })();
   </script>
