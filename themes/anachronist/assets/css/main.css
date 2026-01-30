@@ -75,15 +75,29 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
-  background-image:
-    linear-gradient(var(--color-grid) 0.5px, transparent 0.5px),
-    linear-gradient(90deg, var(--color-grid) 0.5px, transparent 0.5px);
-  background-size: var(--grid-size) var(--grid-size);
   line-height: 1.75;
   margin: 0;
   padding: 0 1rem;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(var(--color-grid) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--color-grid) 0.5px, transparent 0.5px);
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
 }
 
 main {
