@@ -104,14 +104,14 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-body);
-  font-weight: 700;
+  font-family: var(--font-mono);
+  font-weight: 500;
   line-height: 1.3;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
-h1 { font-size: 1.5rem; margin-top: 0; }
-h2 { font-size: 1.2rem; }
+h1 { font-size: 1.25rem; margin-top: 0; }
+h2 { font-size: 1.05rem; }
 
 img {
   max-width: 100%;
@@ -457,7 +457,7 @@ hr {
   border-bottom: 2px solid var(--color-border);
 }
 .hero-post h2 {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   margin: 0 0 0.25rem;
 }
 .hero-post h2 a {
