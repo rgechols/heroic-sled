@@ -57,7 +57,7 @@
   --color-link: #4385BE;
   --color-link-hover: #CECDC3;
   --color-border: #282726;
-  --color-grid: #1C1B1A;
+  --color-grid: #232221;
   --color-accent: #D14D41;
   --color-micro-border: #403E3C;
   --color-newsletter-bg: #1C1B1A;
@@ -82,16 +82,40 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Grid — hardcoded colors to avoid CSS-variable-in-gradient rendering bugs */
 .grid-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: var(--color-bg);
-  background-image:
-    linear-gradient(var(--color-grid) 0.5px, transparent 0.5px),
-    linear-gradient(90deg, var(--color-grid) 0.5px, transparent 0.5px);
-  background-size: var(--grid-size) var(--grid-size);
   pointer-events: none;
+  background-color: #FFFCF0;
+  background-image:
+    linear-gradient(#F2F0E5 0.5px, transparent 0.5px),
+    linear-gradient(90deg, #F2F0E5 0.5px, transparent 0.5px);
+  background-size: 1.5rem 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .grid-bg {
+    background-color: #100F0F;
+    background-image:
+      linear-gradient(#232221 0.5px, transparent 0.5px),
+      linear-gradient(90deg, #232221 0.5px, transparent 0.5px);
+  }
+}
+
+:root[data-theme="dark"] .grid-bg {
+  background-color: #100F0F;
+  background-image:
+    linear-gradient(#232221 0.5px, transparent 0.5px),
+    linear-gradient(90deg, #232221 0.5px, transparent 0.5px);
+}
+
+:root[data-theme="light"] .grid-bg {
+  background-color: #FFFCF0;
+  background-image:
+    linear-gradient(#F2F0E5 0.5px, transparent 0.5px),
+    linear-gradient(90deg, #F2F0E5 0.5px, transparent 0.5px);
 }
 
 main {
