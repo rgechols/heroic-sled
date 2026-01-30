@@ -1,0 +1,62 @@
+baseURL = 'https://example.com/'
+languageCode = 'en-us'
+title = 'The New Anachronist'
+theme = 'anachronist'
+[pagination]
+  pagerSize = 20
+summaryLength = 40
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[permalinks]
+  [permalinks.page]
+    posts = '/posts/:year/:month/:slug/'
+    micro = '/micro/:year/:month/:day/:slug/'
+
+# JSON Feed custom output format
+[mediaTypes]
+  [mediaTypes.'application/feed+json']
+    suffixes = ['json']
+
+[outputFormats]
+  [outputFormats.JSONFeed]
+    mediaType = 'application/feed+json'
+    baseName = 'feed'
+    isPlainText = true
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSONFeed']
+  section = ['HTML', 'RSS', 'JSONFeed']
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts/'
+    weight = 20
+  [[menus.main]]
+    name = 'Micro'
+    pageRef = '/micro/'
+    weight = 30
+  [[menus.main]]
+    name = 'Tags'
+    pageRef = '/tags/'
+    weight = 40
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about/'
+    weight = 50
+
+[params]
+  author = 'Reid Echols'
+  description = 'Essays and short notes from Reid Echols'
+  buttondownUsername = 'YOUR_USERNAME'
+  [params.social]
+    microblog = ''
+    mastodon = ''
+    github = 'rgechols'

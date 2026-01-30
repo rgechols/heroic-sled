@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>Tagged: {{ .Title }}</h1>
+{{ range .Pages }}
+  {{ if eq .Section "posts" }}
+    {{ partial "post-card.html" . }}
+  {{ else if eq .Section "micro" }}
+    {{ partial "micro-card.html" . }}
+  {{ end }}
+{{ end }}
+{{ partial "pagination.html" . }}
+{{ end }}

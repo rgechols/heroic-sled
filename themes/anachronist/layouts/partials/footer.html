@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. All rights reserved.</p>
+  <nav class="social-links">
+    {{ with .Site.Params.social.github }}<a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
+    {{ with .Site.Params.social.mastodon }}<a href="{{ . }}" rel="me">Mastodon</a>{{ end }}
+    {{ with .Site.Params.social.microblog }}<a href="{{ . }}" rel="me">Micro.blog</a>{{ end }}
+  </nav>
+</footer>

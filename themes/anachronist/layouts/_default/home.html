@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="home-intro">
+  {{ .Content }}
+</section>
+
+<section class="combined-feed">
+  {{ $posts := where .Site.RegularPages "Section" "in" (slice "posts" "micro") }}
+  {{ range $posts.ByDate.Reverse }}
+    {{ if eq .Section "posts" }}
+      {{ partial "post-card.html" . }}
+    {{ else if eq .Section "micro" }}
+      {{ partial "micro-card.html" . }}
+    {{ end }}
+  {{ end }}
+</section>
+
+{{ partial "pagination.html" . }}
+{{ end }}

@@ -1,0 +1,36 @@
+{{- $pages := .Pages -}}
+{{- if .IsHome -}}
+  {{- $pages = where .Site.RegularPages "Section" "in" (slice "posts" "micro") -}}
+{{- end -}}
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": {{ .Site.Title | jsonify }},
+  "home_page_url": {{ .Site.BaseURL | jsonify }},
+  "feed_url": {{ .Permalink | jsonify }},
+  "description": {{ .Site.Params.description | jsonify }},
+  "authors": [
+    {
+      "name": {{ .Site.Params.author | jsonify }}
+    }
+  ],
+  "items": [
+    {{- range $i, $p := $pages -}}
+    {{- if $i }},{{ end }}
+    {
+      "id": {{ $p.Permalink | jsonify }},
+      "url": {{ $p.Permalink | jsonify }},
+      "date_published": {{ $p.Date.Format "2006-01-02T15:04:05-07:00" | jsonify }},
+      {{- with $p.Lastmod }}
+      "date_modified": {{ .Format "2006-01-02T15:04:05-07:00" | jsonify }},
+      {{- end }}
+      {{- if $p.Title }}
+      "title": {{ $p.Title | jsonify }},
+      {{- end }}
+      "content_html": {{ $p.Content | jsonify }}
+      {{- with $p.Params.tags }},
+      "tags": {{ . | jsonify }}
+      {{- end }}
+    }
+    {{- end }}
+  ]
+}

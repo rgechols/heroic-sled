@@ -1,0 +1,11 @@
+<article class="micro-card">
+  <div class="micro-content">{{ .Content }}</div>
+  <footer class="micro-meta">
+    <a href="{{ .RelPermalink }}"><time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "Jan 2, 2006 3:04 PM" }}</time></a>
+    {{ with .Params.tags }}
+    <ul class="tags">
+      {{ range . }}<li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+  </footer>
+</article>

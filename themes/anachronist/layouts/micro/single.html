@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="micro-post">
+  <div class="content">
+    {{ .Content }}
+  </div>
+  <footer class="micro-meta">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "January 2, 2006 at 3:04 PM" }}</time>
+    {{ with .Params.tags }}
+    <ul class="tags">
+      {{ range . }}<li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+  </footer>
+</article>
+{{ end }}

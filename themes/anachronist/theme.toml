@@ -1,0 +1,7 @@
+name = 'Anachronist'
+license = 'MIT'
+licenselink = ''
+description = 'A custom theme for The New Anachronist'
+
+[author]
+  name = 'Reid Echols'

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ partial "newsletter.html" . }}
+{{ range .Pages }}
+  {{ partial "post-card.html" . }}
+{{ end }}
+{{ partial "pagination.html" . }}
+{{ end }}
