@@ -63,4 +63,4 @@ ignoreFiles = ['\.obsidian', '\.templates']
   [params.social]
     microblog = ''
     mastodon = ''
-    github = 'rgechols'
+    github = ''
