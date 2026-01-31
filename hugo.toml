@@ -44,7 +44,7 @@ ignoreFiles = ['\.obsidian', '\.templates']
     weight = 20
   [[menus.main]]
     name = 'Micro.blog'
-    pageRef = '/micro/'
+    url = 'https://social.heroic-sled.com'
     weight = 30
   [[menus.main]]
     name = 'Tags'
