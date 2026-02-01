@@ -1,0 +1,21 @@
+{
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "static/images",
+  "showFrontmatter": true,
+  "strictLineBreaks": true,
+  "defaultViewMode": "source",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "content/posts",
+  "userIgnoreFilters": [
+    "themes/",
+    "archetypes/",
+    "assets/",
+    "data/",
+    "i18n/",
+    "layouts/",
+    ".github/",
+    "public/",
+    "resources/"
+  ]
+}

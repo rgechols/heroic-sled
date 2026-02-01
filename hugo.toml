@@ -2,12 +2,13 @@ baseURL = 'https://heroic-sled.com/'
 languageCode = 'en-us'
 title = 'Heroic Sled'
 theme = 'anachronist'
-[pagination]
-  pagerSize = 20
 summaryLength = 40
 
 # Ignore Obsidian config and templates inside content/
-ignoreFiles = ['\.obsidian', '\.templates']
+ignoreFiles = ['\.obsidian', '_templates', '_instructions']
+
+[pagination]
+  pagerSize = 20
 
 [taxonomies]
   tag = 'tags'
@@ -16,8 +17,6 @@ ignoreFiles = ['\.obsidian', '\.templates']
 [permalinks]
   [permalinks.page]
     posts = '/posts/:year/:month/:slug/'
-    micro = '/micro/:year/:month/:day/:slug/'
-
 # JSON Feed custom output format
 [mediaTypes]
   [mediaTypes.'application/feed+json']

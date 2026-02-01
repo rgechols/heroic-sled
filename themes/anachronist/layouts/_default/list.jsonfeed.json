@@ -1,6 +1,6 @@
 {{- $pages := .Pages -}}
 {{- if .IsHome -}}
-  {{- $pages = where .Site.RegularPages "Section" "in" (slice "posts" "micro") -}}
+  {{- $pages = where .Site.RegularPages "Section" "posts" -}}
 {{- end -}}
 {
   "version": "https://jsonfeed.org/version/1.1",

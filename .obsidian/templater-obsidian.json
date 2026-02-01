@@ -1,0 +1,12 @@
+{
+  "templates_folder": "content/_templates",
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "command_timeout": 5,
+  "folder_templates": [
+    {
+      "folder": "content/posts",
+      "template": "content/_templates/new-post.md"
+    }
+  ]
+}
