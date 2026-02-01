@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_instructions/How to Publish.md",
+                "file": "posts/second-post.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "How to Publish"
+              "title": "second-post"
             }
           }
         ]
@@ -187,6 +187,7 @@
   },
   "active": "207f34287c112d02",
   "lastOpenFiles": [
+    "_instructions/How to Publish.md",
     "posts/second-post.md",
     "Untitled.md"
   ]
