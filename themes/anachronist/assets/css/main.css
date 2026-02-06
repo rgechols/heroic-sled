@@ -172,7 +172,7 @@ hr {
   border-bottom: 2px solid var(--color-text);
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -198,9 +198,19 @@ hr {
   height: 20px;
 }
 
+/* Invert favicon for dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-icon {
+    filter: invert(0.81);
+  }
+}
+:root[data-theme="dark"] .site-icon {
+  filter: invert(0.81);
+}
+
 .header-right {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -522,21 +532,30 @@ hr {
   border-bottom: 1px solid var(--color-border);
 }
 .recent-posts-list {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 1.25rem;
   margin: 0;
 }
 .recent-posts-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed var(--color-border);
+  padding: 0.25rem 0;
+  color: var(--color-text-muted);
+}
+.recent-posts-list li::marker {
+  color: var(--color-text-muted);
+}
+.recent-posts-list .post-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
 }
 .recent-posts-list li a {
-  color: var(--color-text);
-  font-size: 1rem;
-  border-bottom: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-accent);
 }
 .recent-posts-list li a:hover {
-  color: var(--color-link);
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
 }
 
 /* ---- Feed link ---- */

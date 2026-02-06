@@ -10,7 +10,7 @@
   <h2>Recent Posts</h2>
   <ul class="recent-posts-list">
   {{ range first 5 $sorted }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="post-date">[{{ .Date.Format "2006-01-02" }}]</span></li>
   {{ end }}
   </ul>
   <p class="column-more"><a href="{{ "posts/" | relURL }}">View all posts &rarr;</a></p>
