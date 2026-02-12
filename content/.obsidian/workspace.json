@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_index.md",
+                "file": "about/_index.md",
                 "mode": "source",
                 "source": false
               },
@@ -187,6 +187,7 @@
   },
   "active": "207f34287c112d02",
   "lastOpenFiles": [
+    "_index.md",
     "about/_index.md",
     "posts/second-post.md",
     "_instructions/How to Publish.md",
