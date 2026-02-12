@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/second-post.md",
+                "file": "_index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "second-post"
+              "title": "_index"
             }
           }
         ]
@@ -180,13 +180,16 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "207f34287c112d02",
   "lastOpenFiles": [
-    "_instructions/How to Publish.md",
+    "about/_index.md",
     "posts/second-post.md",
+    "_instructions/How to Publish.md",
     "Untitled.md"
   ]
 }

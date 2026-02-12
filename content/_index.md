@@ -3,4 +3,4 @@ title: "Heroic Sled"
 image: "/images/hero.jpg"
 ---
 
-Here are recorded the infrequent, occasional, and entirely human outputs of the brain currently belonging to Reid Echols. It is a test of sorts. 
+*Ineluctably constructed upon the incertitude of the void.*
