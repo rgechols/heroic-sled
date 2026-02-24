@@ -59,6 +59,7 @@ ignoreFiles = ['\.obsidian', '_templates', '_instructions']
   description = 'Writing by Reid Echols'
   buttondownUsername = 'YOUR_USERNAME'
   microblogFeedURL = 'https://heroic-sled.micro.blog/feed.json'
+  microblogUsername = 'heroic_sled'
   [params.social]
     microblog = ''
     mastodon = ''

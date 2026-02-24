@@ -16,7 +16,7 @@
     return new Date(dateStr).toLocaleDateString();
   }
 
-  function truncateHTML(html, max) {
+  function truncateText(html, max) {
     var div = document.createElement('div');
     div.innerHTML = html;
     var text = div.textContent || div.innerText || '';
@@ -24,28 +24,45 @@
     return text.substring(0, max).replace(/\s+\S*$/, '') + '\u2026';
   }
 
+  function isSafeURL(url) {
+    return typeof url === 'string' && /^https?:\/\//i.test(url);
+  }
+
   function renderItem(item) {
     var el = document.createElement('div');
     el.className = 'microfeed-item';
 
-    var html = '';
-
-    if (item.image) {
-      html += '<img src="' + item.image + '" alt="" class="microfeed-thumb" loading="lazy">';
+    if (item.image && isSafeURL(item.image)) {
+      var img = document.createElement('img');
+      img.src = item.image;
+      img.alt = '';
+      img.className = 'microfeed-thumb';
+      img.loading = 'lazy';
+      el.appendChild(img);
     }
 
     if (item.title) {
-      var url = item.url || '#';
-      html += '<p class="microfeed-title"><a href="' + url + '">' + item.title + '</a></p>';
+      var p = document.createElement('p');
+      p.className = 'microfeed-title';
+      var a = document.createElement('a');
+      a.href = isSafeURL(item.url) ? item.url : '#';
+      a.textContent = item.title;
+      p.appendChild(a);
+      el.appendChild(p);
     } else if (item.content_html) {
-      html += '<p class="microfeed-text">' + truncateHTML(item.content_html, 180) + '</p>';
+      var p = document.createElement('p');
+      p.className = 'microfeed-text';
+      p.textContent = truncateText(item.content_html, 180);
+      el.appendChild(p);
     }
 
     if (item.date_published) {
-      html += '<span class="microfeed-time">' + relativeTime(item.date_published) + '</span>';
+      var span = document.createElement('span');
+      span.className = 'microfeed-time';
+      span.textContent = relativeTime(item.date_published);
+      el.appendChild(span);
     }
 
-    el.innerHTML = html;
     return el;
   }
 

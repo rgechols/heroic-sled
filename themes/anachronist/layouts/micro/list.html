@@ -4,6 +4,6 @@
 <div id="microfeed" data-feed-url="{{ .Site.Params.microblogFeedURL }}">
   <p class="microfeed-loading">Loading&hellip;</p>
 </div>
-<p class="column-more"><a href="https://micro.blog/heroic_sled">Follow on Micro.blog &rarr;</a></p>
+<p class="column-more"><a href="https://micro.blog/{{ .Site.Params.microblogUsername }}">Follow on Micro.blog &rarr;</a></p>
 <script src="{{ "js/microfeed.js" | relURL }}"></script>
 {{ end }}
